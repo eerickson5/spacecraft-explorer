@@ -28,7 +28,7 @@ function renderCards(data){
 
         container.appendChild(name);
         container.appendChild(image);
-        container.appendChild(body);
+        //container.appendChild(body);
 
         const parentContainer = document.getElementById("spacecrafts-container");
         parentContainer.appendChild(container)

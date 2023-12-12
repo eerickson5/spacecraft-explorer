@@ -10,8 +10,17 @@ h1{
     color:bisque
 }
 
+h2{
+    margin: 10px;
+    text-align: center;
+}
+
 img{
-    max-width: 95%;
+    max-width: 100%;
+    max-height: 200px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    justify-self: flex-end;
 }
 
 #spacecrafts-container{
@@ -22,9 +31,19 @@ img{
 }
 
 .card{
-    max-width: 28%;
-    min-width: 20%;
-    margin: 15px
+    width: 25%;
+    margin: 15px;
+    align-content: center;
+    background-color: rgb(0, 255, 255, 0.25);
+    border-radius: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /* background-color: aqua; */
+}
+
+.card:hover{
+    background-color: rgb(0, 255, 255, 0.35);
 }
 
