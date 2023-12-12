@@ -15,6 +15,13 @@ h2{
     text-align: center;
 }
 
+h4{
+    background-color: bisque;
+    color: rgb(2, 2, 34);
+    padding: 15px;
+    border-radius: 15px;
+}
+
 img{
     max-width: 100%;
     max-height: 200px;
@@ -60,3 +67,4 @@ img{
 #description-container p{
     max-width: 500px;
 }
+

@@ -47,14 +47,14 @@ function expandCard(craft){
     name.textContent = craft.name
     container.append(name)
 
-    const timeInSpace = document.createElement("h3")
-    timeInSpace.textContent = `Time in Space: ${craft.time_in_space}`
-    container.append(timeInSpace)
+    // const timeInSpace = document.createElement("h3")
+    // timeInSpace.textContent = `Time in Space: ${craft.time_in_space}`
+    // container.append(timeInSpace)
 
     if(craft.in_space){
-        const inSpaceTag = document.createElement("button")
+        const inSpaceTag = document.createElement("h4")
         inSpaceTag.textContent = "In Space Now!"
-        container.push(inSpaceTag)
+        container.appendChild(inSpaceTag)
     }
 
     const image = document.createElement("img")
