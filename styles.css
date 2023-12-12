@@ -10,6 +10,10 @@ h1{
     color:bisque
 }
 
+img{
+    max-width: 95%;
+}
+
 #spacecrafts-container{
     display: flex;
     flex-direction: row;
@@ -23,3 +27,4 @@ h1{
     margin: 15px
     /* background-color: aqua; */
 }
+

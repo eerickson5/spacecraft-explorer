@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector("button").addEventListener("click", () => loadContent());
-    //loadContent();
+    //document.querySelector("button").addEventListener("click", () => loadContent());
+    loadContent();
 })
 
 function loadContent(){
@@ -14,16 +14,20 @@ function renderCards(data){
     // data.results.forEach(craft => {
         data.forEach(craft => {
 
-        const container = document.createElement("div");
+        const container = document.createElement("div")
         container.classList.add("card")
 
-        const name = document.createElement("h2");
+        const name = document.createElement("h2")
         name.textContent = craft.name
 
-        const body = document.createElement("p");
+        const body = document.createElement("p")
         body.textContent = craft.description
 
+        const image = document.createElement("img")
+        image.src = craft.spacecraft_config.image_url
+
         container.appendChild(name);
+        container.appendChild(image);
         container.appendChild(body);
 
         const parentContainer = document.getElementById("spacecrafts-container");
