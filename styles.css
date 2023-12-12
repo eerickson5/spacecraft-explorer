@@ -53,4 +53,10 @@ img{
 
 #description_container{
     max-width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+#description-container p{
+    max-width: 500px;
 }
