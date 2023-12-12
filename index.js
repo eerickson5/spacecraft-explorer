@@ -38,6 +38,9 @@ function renderCards(data){
 }
 
 function expandCard(craft){
+    const parentContainer = document.querySelector("#description-container")
+    parentContainer.innerHTML = ''
+
     const container = document.createElement("div")
 
     const name = document.createElement("h1")
@@ -56,5 +59,5 @@ function expandCard(craft){
     description.textContent = craft.description
     container.append(description)
 
-    document.querySelector("#description-container").appendChild(container)
+    parentContainer.appendChild(container)
 }
