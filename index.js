@@ -1,15 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    loadContent();
+    document.querySelector("button").addEventListener("click", () => loadContent());
+    //loadContent();
 })
 
 function loadContent(){
-    fetch("https://ll.thespacedevs.com/2.2.0/spacecraft/?in_space=true")
+    //fetch("https://ll.thespacedevs.com/2.2.0/spacecraft/?in_space=true")
+    fetch("http://localhost:3000/results")
     .then(res => res.json())
     .then(data => renderCards(data))
 }
 
 function renderCards(data){
-    data.results.forEach(craft => {
+    // data.results.forEach(craft => {
+        data.forEach(craft => {
+
         const container = document.createElement("div");
         container.classList.add("card")
 
