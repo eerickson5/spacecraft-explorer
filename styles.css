@@ -50,3 +50,7 @@ img{
 .bottom-container{
     display: flex;
 }
+
+#description_container{
+    max-width: 30%;
+}
