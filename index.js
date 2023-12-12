@@ -16,6 +16,7 @@ function renderCards(data){
 
         const container = document.createElement("div")
         container.classList.add("card")
+        container.addEventListener("click", (() => expandCard(craft)))
 
         const name = document.createElement("h2")
         name.textContent = craft.name
@@ -34,4 +35,26 @@ function renderCards(data){
         parentContainer.appendChild(container)
 
     })
+}
+
+function expandCard(craft){
+    const container = document.createElement("div")
+
+    const name = document.createElement("h1")
+    name.textContent = craft.name
+    container.append(name)
+
+    const timeInSpace = document.createElement("h3")
+    timeInSpace.textContent = `Time in Space: ${craft.time_in_space}`
+    container.append(timeInSpace)
+
+    const image = document.createElement("img")
+    image.src = craft.spacecraft_config.image_url
+    container.append(image)
+
+    const description = document.createElement("p")
+    description.textContent = craft.description
+    container.append(description)
+
+    document.querySelector("#description-container").appendChild(container)
 }
