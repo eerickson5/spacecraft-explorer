@@ -11,6 +11,7 @@ function loadContent(){
 function renderCards(data){
     data.results.forEach(craft => {
         const container = document.createElement("div");
+        container.classList.add("card")
 
         const name = document.createElement("h2");
         name.textContent = craft.name

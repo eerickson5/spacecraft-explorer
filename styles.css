@@ -1,0 +1,25 @@
+
+
+body{
+    background-color: rgb(2, 2, 34);
+    color: whitesmoke;
+    padding: 15px
+}
+
+h1{
+    color:bisque
+}
+
+#spacecrafts-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card{
+    max-width: 28%;
+    min-width: 20%;
+    margin: 15px
+    /* background-color: aqua; */
+}
