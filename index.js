@@ -51,6 +51,12 @@ function expandCard(craft){
     timeInSpace.textContent = `Time in Space: ${craft.time_in_space}`
     container.append(timeInSpace)
 
+    if(craft.in_space){
+        const inSpaceTag = document.createElement("button")
+        inSpaceTag.textContent = "In Space Now!"
+        container.push(inSpaceTag)
+    }
+
     const image = document.createElement("img")
     image.src = craft.spacecraft_config.image_url
     container.append(image)
