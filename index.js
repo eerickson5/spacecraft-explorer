@@ -26,7 +26,6 @@ function loadContentFromLocal(condition = ""){
 }
 
 function loadContentFromAPI(condition = ""){
-    console.log('hi')
     document.getElementById("spacecrafts-container").innerHTML = ""
 
     fetch("https://ll.thespacedevs.com/2.2.0/spacecraft" + condition)
@@ -35,6 +34,7 @@ function loadContentFromAPI(condition = ""){
 }
 
 function renderCards(data){
+    console.log(data)
         data.forEach(craft => {
 
         const container = document.createElement("div")
@@ -52,7 +52,6 @@ function renderCards(data){
 
         container.appendChild(name);
         container.appendChild(image);
-        //container.appendChild(body);
 
         const parentContainer = document.getElementById("spacecrafts-container");
         parentContainer.appendChild(container)
