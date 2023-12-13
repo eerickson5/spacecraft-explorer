@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function handleFormSubmission(event){
     event.preventDefault()
+    document.querySelector("#description-container").innerHTML = ""
 
     const spaceCheck = event.target.childNodes[1].checked
     const activeCheck = event.target.childNodes[6].checked
