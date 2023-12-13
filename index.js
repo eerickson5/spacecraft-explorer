@@ -66,4 +66,5 @@ function expandCard(craft){
     container.append(description)
 
     parentContainer.appendChild(container)
+    window.scrollTo(0, 0);
 }
