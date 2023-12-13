@@ -1,13 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     //document.querySelector("button").addEventListener("click", () => loadContent());
-    loadContent();
+    loadContentFromLocal();
 })
 
-function loadContent(){
-    //fetch("https://ll.thespacedevs.com/2.2.0/spacecraft/?in_space=true")
-    fetch("http://localhost:3000/results")
+function loadContentFromLocal(condition = ""){
+    fetch("http://localhost:3000/results" + condition)
     .then(res => res.json())
     .then(data => renderCards(data))
+}
+
+function loadContentFromAPI(condition = ""){
+    fetch("https://ll.thespacedevs.com/2.2.0/spacecraft/" + condition)
+    .then(res => res.json())
+    .then(data => renderCards(data.results))
 }
 
 function renderCards(data){
@@ -46,10 +51,6 @@ function expandCard(craft){
     const name = document.createElement("h1")
     name.textContent = craft.name
     container.append(name)
-
-    // const timeInSpace = document.createElement("h3")
-    // timeInSpace.textContent = `Time in Space: ${craft.time_in_space}`
-    // container.append(timeInSpace)
 
     if(craft.in_space){
         const inSpaceTag = document.createElement("h4")
