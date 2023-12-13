@@ -8,10 +8,9 @@ function handleFormSubmission(event){
     event.preventDefault()
 
     const spaceCheck = event.target.childNodes[1].checked
-    const flightsCheck = event.target.childNodes[6].checked
+    const activeCheck = event.target.childNodes[6].checked
+    const filterString = `/?${spaceCheck ? "in_space=true&" : ""}${activeCheck ? "status.name=Active" : ""}`
 
-    let filterString = `${spaceCheck ? "/?in_space=true" : ""}${flightsCheck? "/?flights_count>1" : ""}`
-    
     loadContentFromLocal(filterString);
 }
 
@@ -25,7 +24,7 @@ function loadContentFromLocal(condition = ""){
 
 function loadContentFromAPI(condition = ""){
     document.getElementById("spacecrafts-container").innerHTML = ""
-    
+
     fetch("https://ll.thespacedevs.com/2.2.0/spacecraft" + condition)
     .then(res => res.json())
     .then(data => renderCards(data.results))
