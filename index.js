@@ -10,9 +10,11 @@ function handleFormSubmission(event){
 
     const spaceCheck = event.target.childNodes[1].checked
     const activeCheck = event.target.childNodes[6].checked
+    const apiCheck = event.target.childNodes[11].checked
+
     const filterString = `/?${spaceCheck ? "in_space=true&" : ""}${activeCheck ? "status.name=Active" : ""}`
 
-    loadContentFromLocal(filterString);
+    apiCheck ? loadContentFromAPI(filterString) : loadContentFromLocal(filterString);
 }
 
 function loadContentFromLocal(condition = ""){
@@ -24,6 +26,7 @@ function loadContentFromLocal(condition = ""){
 }
 
 function loadContentFromAPI(condition = ""){
+    console.log('hi')
     document.getElementById("spacecrafts-container").innerHTML = ""
 
     fetch("https://ll.thespacedevs.com/2.2.0/spacecraft" + condition)
@@ -32,7 +35,6 @@ function loadContentFromAPI(condition = ""){
 }
 
 function renderCards(data){
-    // data.results.forEach(craft => {
         data.forEach(craft => {
 
         const container = document.createElement("div")
