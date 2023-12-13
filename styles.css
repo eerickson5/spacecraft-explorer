@@ -31,6 +31,17 @@ img{
     justify-self: flex-end;
 }
 
+form{
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+}
+
+label{
+    margin-right: 25px;
+    font-size: large;
+}
+
 
 #spacecrafts-container{
     display: flex;
