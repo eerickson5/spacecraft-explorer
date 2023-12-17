@@ -15,9 +15,9 @@ This web app is available to test at https://eerickson5.github.io/spacecraft-exp
 To test this web app locally, clone the repo and run the following in console.
 
 ```zshell
-npm install -g json-server
-cd spacecraft-explorer
-json-server --watch db.json
+$ npm install -g json-server
+$ cd spacecraft-explorer
+$ json-server --watch db.json
 ```
 
 For more information on db.json, see https://github.com/typicode/json-server.
